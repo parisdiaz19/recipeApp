@@ -1,17 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ 
+const App = () => {
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    const APP_ID = "070f1f22";
+    const APP_KEY = "17eea0a610a22800366f5e171ec74b55";
+
+    const exampleReq = 
+    `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
+
+    return (
+        <div className="App">
+            <form className="search-form">
+                <input className="search-bar" type="text" />
+                <button className="search-btn" type="submit">Search</button>
+            </form>
+        </div>
+    );
+};
+
+
+ReactDOM.render(App, document.getElementById('root'));
